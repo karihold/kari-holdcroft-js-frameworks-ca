@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import './App.scss';
+import HomePage from './components/HomePage/HomePage';
+import GameDetailsPage from './components/GameDetailsPage/GameDetailsPage';
+import ContactPage from './components/ContactPage/ContactPage';
+
+const baseUrl = 'https://api.rawg.io/api/games';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav>
+        <ul className="nav-wrapper">
+          <li>
+            <NavLink className="nav-link" activeClassName="active" exact to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-link" activeClassName="active" to="/contact">
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route exact path="/">
+          <HomePage baseUrl={baseUrl} />
+        </Route>
+        <Route path="/contact">
+          <ContactPage />
+        </Route>
+        <Route path="/game/:id">
+          <GameDetailsPage baseUrl={baseUrl} />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
