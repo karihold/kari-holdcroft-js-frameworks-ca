@@ -25,7 +25,7 @@ const GameItem = ({ id, title, image, rating, releaseDate }) => {
 };
 
 GameItem.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string,
   image: PropTypes.string,
   rating: PropTypes.number,

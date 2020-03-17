@@ -4,14 +4,11 @@ import PropTypes from 'prop-types';
 const FormInput = ({ label, name, type, error, register }) => {
   const [isValid, setIsValid] = useState(false);
   const [hasFirstError, setHasFirstError] = useState(false);
-  useEffect(
-    p => {
-      if (!hasFirstError && error) return setHasFirstError(true);
+  useEffect(() => {
+    if (!hasFirstError && error) return setHasFirstError(true);
 
-      setIsValid(hasFirstError && !error);
-    },
-    [hasFirstError, error]
-  );
+    setIsValid(hasFirstError && !error);
+  }, [hasFirstError, error]);
 
   return (
     <label className="form-label">
@@ -26,7 +23,7 @@ const FormInput = ({ label, name, type, error, register }) => {
 FormInput.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   error: PropTypes.string,
   register: PropTypes.func
 };

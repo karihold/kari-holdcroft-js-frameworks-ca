@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import GameFilter from '../GameFilter/GameFilter';
 import GameItem from '../GameItem/GameItem';
 
@@ -33,6 +34,10 @@ const HomePage = ({ baseUrl }) => {
       </section>
     </main>
   );
+};
+
+HomePage.propTypes = {
+  baseUrl: PropTypes.string.isRequired
 };
 
 export default HomePage;
