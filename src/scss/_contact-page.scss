@@ -1,0 +1,79 @@
+.contact-form {
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.2);
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.form-label {
+  display: flex;
+  flex-flow: column;
+  font-weight: 500;
+  margin-bottom: 16px;
+  width: 100%;
+
+  input,
+  textarea {
+    margin-top: 4px;
+    box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
+    padding: 6px 8px;
+
+    border: 1.2px solid hsla(0, 0%, 0%, 0.2);
+  }
+
+  input {
+    height: 30px;
+  }
+
+  textarea {
+    height: 200px;
+    resize: none;
+  }
+}
+
+.validation-error {
+  font-weight: 400;
+  font-style: italic;
+  color: hsl(0, 58%, 55%);
+  margin: 2px 0;
+}
+
+.validation-success {
+  font-weight: 400;
+  font-style: italic;
+  color: hsl(115, 50%, 45%);
+  margin: 2px 0;
+}
+
+.submit-button {
+  display: inline-block;
+  background-color: crimson;
+  border-radius: 4px;
+  padding: 10px 25px;
+  color: #fff;
+  font-weight: 500;
+
+  font-size: 20px;
+
+  text-decoration: none;
+
+  transition: 0.2s ease-in-out;
+
+  border: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    filter: brightness(120%);
+  }
+
+  @include on-mobile {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}

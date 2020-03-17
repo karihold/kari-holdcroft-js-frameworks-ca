@@ -1,0 +1,42 @@
+nav {
+  background-color: royalblue;
+}
+
+.nav-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  background-color: royalblue;
+  list-style: none;
+
+  padding: 10px 20px;
+
+  @include on-page-break() {
+    padding: 10px $page-padding;
+  }
+
+  @include on-mobile() {
+    padding: 10px $page-padding-mobile;
+    justify-content: space-between;
+  }
+}
+
+.nav-link {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(90%);
+    border-bottom: 2px solid gold;
+  }
+
+  &.active {
+    border-bottom: 2px solid gold;
+  }
+}

@@ -1,0 +1,13 @@
+.games-section {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#game-filter {
+  width: 300px;
+  font-weight: 600;
+
+  @include smaller-than(1000px) {
+    width: 100%;
+  }
+}

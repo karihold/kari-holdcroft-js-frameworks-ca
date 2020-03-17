@@ -1,0 +1,29 @@
+@mixin smaller-than($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin larger-than($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin between($max, $min) {
+  @media screen and (max-width: $max) and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin on-page-break() {
+  @include smaller-than($max-page-width + ($page-padding * 2)) {
+    @content;
+  }
+}
+
+@mixin on-mobile() {
+  @include smaller-than(640px) {
+    @content;
+  }
+}
