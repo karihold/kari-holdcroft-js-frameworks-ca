@@ -1,0 +1,30 @@
+@import './scss/variables';
+@import './scss/mixins';
+@import './scss/nav';
+@import './scss/home-page';
+@import './scss/game-details-page';
+@import './scss/game-item';
+@import './scss/contact-page';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: $max-page-width;
+  margin: 40px auto;
+
+  @include on-page-break() {
+    padding: 0 $page-padding;
+  }
+
+  @include on-mobile() {
+    padding: 0 $page-padding-mobile;
+  }
+}
+
+button {
+  cursor: pointer;
+}
